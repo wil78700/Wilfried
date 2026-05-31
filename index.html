@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Famille Martin</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#071733;
+    color:white;
+    overflow-x:hidden;
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:rgba(5,15,35,.8);
+    backdrop-filter:blur(10px);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+}
+
+.logo{
+    font-size:1.2rem;
+    letter-spacing:4px;
+    font-weight:600;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    letter-spacing:2px;
+    font-size:.9rem;
+}
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(7,23,51,.65),rgba(7,23,51,.75)),
+    url("https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2000");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero-content{
+    max-width:900px;
+    padding:20px;
+}
+
+.hero-subtitle{
+    letter-spacing:8px;
+    font-size:.9rem;
+    margin-bottom:30px;
+    opacity:.85;
+}
+
+.hero-title{
+    font-family:'Caveat',cursive;
+    font-size:7rem;
+    margin-bottom:30px;
+}
+
+.hero-text{
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+    opacity:.9;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:40px;
+    padding:18px 50px;
+    border:2px solid rgba(255,255,255,.7);
+    border-radius:50px;
+    color:white;
+    text-decoration:none;
+    letter-spacing:3px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:white;
+    color:#071733;
+}
+
+section{
+    padding:120px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-sub{
+    letter-spacing:6px;
+    opacity:.6;
+    margin-bottom:15px;
+}
+
+.section-title h2{
+    font-size:3rem;
+    letter-spacing:8px;
+}
+
+.about{
+    text-align:center;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    line-height:2;
+    opacity:.85;
+}
+
+.stats{
+    margin-top:70px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:30px;
+}
+
+.stat{
+    padding:40px;
+    background:rgba(255,255,255,.05);
+    border-radius:20px;
+}
+
+.stat-number{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.gallery{
+    background:#0a2148;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:.4s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.03);
+}
+
+.timeline{
+    display:grid;
+    gap:30px;
+}
+
+.event{
+    background:rgba(255,255,255,.05);
+    padding:30px;
+    border-left:4px solid white;
+    border-radius:10px;
+}
+
+footer{
+    background:#041124;
+    padding:60px 20px;
+    text-align:center;
+}
+
+footer p{
+    opacity:.7;
+}
+
+@media(max-width:768px){
+
+.hero-title{
+    font-size:4rem;
+}
+
+.menu{
+    display:none;
+}
+
+.section-title h2{
+    font-size:2rem;
+}
+
+.hero-subtitle{
+    letter-spacing:4px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">FAMILLE MARTIN</div>
+
+        <div class="menu">
+            <a href="#histoire">HISTOIRE</a>
+            <a href="#photos">PHOTOS</a>
+            <a href="#evenements">ÉVÉNEMENTS</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-subtitle">
+            NOS SOUVENIRS • NOS VOYAGES • NOTRE HISTOIRE
+        </div>
+
+        <div class="hero-title">
+            La Famille Martin
+        </div>
+
+        <p class="hero-text">
+            Un espace privé pour partager nos photos,
+            nos événements et les moments qui nous rassemblent.
+        </p>
+
+        <a href="#histoire" class="btn">
+            DÉCOUVRIR
+        </a>
+
+    </div>
+
+</section>
+
+<section id="histoire">
+
+    <div class="container">
+
+        <div class="section-title">
+            <div class="section-sub">
+                DEPUIS PLUSIEURS GÉNÉRATIONS
+            </div>
+            <h2>NOTRE HISTOIRE</h2>
+        </div>
+
+        <div class="about">
+
+            <p>
+                Cette page rassemble les souvenirs de notre famille :
+                voyages, anniversaires, naissances,
+                mariages et tous ces moments qui construisent notre histoire.
+            </p>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <div class="stat-number">4</div>
+                    Générations
+                </div>
+
+                <div class="stat">
+                    <div class="stat-number">37</div>
+                    Membres
+                </div>
+
+                <div class="stat">
+                    <div class="stat-number">12</div>
+                    Pays visités
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="photos" class="gallery">
+
+    <div class="container">
+
+        <div class="section-title">
+            <div class="section-sub">
+                NOS PLUS BEAUX MOMENTS
+            </div>
+            <h2>GALERIE</h2>
+        </div>
+
+        <div class="gallery-grid">
+
+            <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1200">
+            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1200">
+            <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=1200">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200">
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="evenements">
+
+    <div class="container">
+
+        <div class="section-title">
+            <div class="section-sub">
+                À VENIR
+            </div>
+            <h2>ÉVÉNEMENTS</h2>
+        </div>
+
+        <div class="timeline">
+
+            <div class="event">
+                🎂 Anniversaire de Mamie - 12 juillet
+            </div>
+
+            <div class="event">
+                🏖 Vacances familiales - Août
+            </div>
+
+            <div class="event">
+                🎄 Noël en famille - Décembre
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>
+        © 2025 Famille Martin - Tous droits réservés
+    </p>
+</footer>
+
+</body>
+</html>
