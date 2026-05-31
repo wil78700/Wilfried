@@ -465,6 +465,90 @@ Entre passion du ballon rond, amour du jardin, plaisir de bien manger et goût p
         Marion & Wilfried • 2026
     </p>
 </footer>
+<!-- =========================
+     WIDGET MUSIQUE
+========================= -->
 
+<div id="music-widget">
+
+    <button id="playMusicBtn">
+        🎵 Notre chanson
+    </button>
+
+</div>
+
+<iframe
+    id="musicPlayer"
+    width="0"
+    height="0"
+    style="display:none;"
+    allow="autoplay">
+</iframe>
+
+<style>
+
+#music-widget{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    z-index:9999;
+}
+
+#playMusicBtn{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.25);
+    color:white;
+    padding:15px 24px;
+    border-radius:50px;
+    cursor:pointer;
+    font-family:'Montserrat',sans-serif;
+    font-size:.95rem;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+#playMusicBtn:hover{
+    transform:scale(1.05);
+    background:rgba(255,255,255,.22);
+}
+
+@media(max-width:768px){
+
+    #music-widget{
+        bottom:15px;
+        right:15px;
+    }
+
+    #playMusicBtn{
+        font-size:.85rem;
+        padding:12px 18px;
+    }
+
+}
+
+</style>
+
+<script>
+
+let musicStarted = false;
+
+document.getElementById("playMusicBtn").addEventListener("click", function(){
+
+    const player = document.getElementById("musicPlayer");
+
+    if(!musicStarted){
+
+        player.src =
+        "https://www.youtube.com/embed/TcEk-ymzS3E?autoplay=1&start=39&loop=1&playlist=TcEk-ymzS3E";
+
+        musicStarted = true;
+
+        this.innerHTML = "🎶 J'attends l'amour";
+    }
+
+});
+
+</script>
 </body>
 </html>
