@@ -465,90 +465,61 @@ Entre passion du ballon rond, amour du jardin, plaisir de bien manger et goût p
         Marion & Wilfried • 2026
     </p>
 </footer>
-<!-- =========================
-     WIDGET MUSIQUE
-========================= -->
-
+<!-- Widget musique -->
 <div id="music-widget">
-
-    <button id="playMusicBtn">
+    <button id="togglePlayer">
         🎵 Notre chanson
     </button>
 
+    <div id="player-container">
+        <iframe
+            width="300"
+            height="170"
+            src="https://www.youtube.com/embed/TcEk-ymzS3E?start=39"
+            title="J'attends l'amour"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
 </div>
 
-<iframe
-    id="musicPlayer"
-    width="0"
-    height="0"
-    style="display:none;"
-    allow="autoplay">
-</iframe>
-
 <style>
-
 #music-widget{
     position:fixed;
-    bottom:25px;
-    right:25px;
+    bottom:20px;
+    right:20px;
     z-index:9999;
 }
 
-#playMusicBtn{
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(12px);
-    border:1px solid rgba(255,255,255,.25);
+#togglePlayer{
+    background:rgba(255,255,255,.15);
     color:white;
-    padding:15px 24px;
+    border:1px solid rgba(255,255,255,.3);
     border-radius:50px;
+    padding:15px 25px;
     cursor:pointer;
-    font-family:'Montserrat',sans-serif;
-    font-size:.95rem;
-    letter-spacing:1px;
-    transition:.3s;
+    backdrop-filter:blur(10px);
 }
 
-#playMusicBtn:hover{
-    transform:scale(1.05);
-    background:rgba(255,255,255,.22);
+#player-container{
+    display:none;
+    margin-top:10px;
 }
-
-@media(max-width:768px){
-
-    #music-widget{
-        bottom:15px;
-        right:15px;
-    }
-
-    #playMusicBtn{
-        font-size:.85rem;
-        padding:12px 18px;
-    }
-
-}
-
 </style>
 
 <script>
+document.getElementById('togglePlayer').addEventListener('click', function() {
 
-let musicStarted = false;
+    const player = document.getElementById('player-container');
 
-document.getElementById("playMusicBtn").addEventListener("click", function(){
-
-    const player = document.getElementById("musicPlayer");
-
-    if(!musicStarted){
-
-        player.src =
-        "https://www.youtube.com/embed/TcEk-ymzS3E?autoplay=1&start=39&loop=1&playlist=TcEk-ymzS3E";
-
-        musicStarted = true;
-
-        this.innerHTML = "🎶 J'attends l'amour";
+    if(player.style.display === 'block'){
+        player.style.display = 'none';
+    } else {
+        player.style.display = 'block';
     }
 
 });
-
 </script>
 </body>
 </html>
