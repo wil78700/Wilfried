@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> MARION ET WILFRIED</title>
+
+<title>Marion & Wilfried</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
 
@@ -31,7 +32,7 @@ nav{
     width:100%;
     top:0;
     z-index:1000;
-    background:rgba(5,15,35,.8);
+    background:rgba(5,15,35,.85);
     backdrop-filter:blur(10px);
 }
 
@@ -61,8 +62,8 @@ nav{
 .hero{
     min-height:100vh;
     background:
-    linear-gradient(rgba(7,23,51,.65),rgba(7,23,51,.75)),
-    url("https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2000");
+    linear-gradient(rgba(7,23,51,.55),rgba(7,23,51,.75)),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2000");
     background-size:cover;
     background-position:center;
     display:flex;
@@ -80,7 +81,7 @@ nav{
     letter-spacing:8px;
     font-size:.9rem;
     margin-bottom:30px;
-    opacity:.85;
+    opacity:.9;
 }
 
 .hero-title{
@@ -93,14 +94,14 @@ nav{
     max-width:700px;
     margin:auto;
     line-height:1.8;
-    opacity:.9;
+    opacity:.95;
 }
 
 .btn{
     display:inline-block;
     margin-top:40px;
     padding:18px 50px;
-    border:2px solid rgba(255,255,255,.7);
+    border:2px solid rgba(255,255,255,.8);
     border-radius:50px;
     color:white;
     text-decoration:none;
@@ -129,7 +130,7 @@ section{
 
 .section-sub{
     letter-spacing:6px;
-    opacity:.6;
+    opacity:.7;
     margin-bottom:15px;
 }
 
@@ -146,7 +147,7 @@ section{
     max-width:800px;
     margin:auto;
     line-height:2;
-    opacity:.85;
+    opacity:.9;
 }
 
 .stats{
@@ -160,6 +161,7 @@ section{
     padding:40px;
     background:rgba(255,255,255,.05);
     border-radius:20px;
+    backdrop-filter:blur(5px);
 }
 
 .stat-number{
@@ -201,6 +203,32 @@ section{
     border-radius:10px;
 }
 
+.profiles{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+
+.profile-card{
+    background:rgba(255,255,255,.05);
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    backdrop-filter:blur(5px);
+}
+
+.profile-card h3{
+    margin-bottom:20px;
+    letter-spacing:4px;
+    font-size:1.5rem;
+}
+
+.profile-card p{
+    line-height:1.9;
+    opacity:.9;
+}
+
 footer{
     background:#041124;
     padding:60px 20px;
@@ -238,13 +266,18 @@ footer p{
 
 <nav>
     <div class="nav-container">
-        <div class="logo">MARION ET WILFRIED</div>
+
+        <div class="logo">
+            MARION & WILFRIED
+        </div>
 
         <div class="menu">
             <a href="#histoire">HISTOIRE</a>
             <a href="#photos">PHOTOS</a>
             <a href="#evenements">ÉVÉNEMENTS</a>
+            <a href="#nous">NOUS</a>
         </div>
+
     </div>
 </nav>
 
@@ -253,16 +286,17 @@ footer p{
     <div class="hero-content">
 
         <div class="hero-subtitle">
-            NOS SOUVENIRS • NOS VOYAGES • NOTRE HISTOIRE
+            AMOUR • VOYAGES • SOUVENIRS
         </div>
 
         <div class="hero-title">
-            MARION ET WILFRIED
+            Marion & Wilfried
         </div>
 
         <p class="hero-text">
-            Un espace privé pour partager nos photos,
-            nos événements et les moments qui nous rassemblent.
+            Une histoire écrite entre les couchers de soleil,
+            les plages du monde et les souvenirs que nous construisons
+            jour après jour.
         </p>
 
         <a href="#histoire" class="btn">
@@ -279,7 +313,7 @@ footer p{
 
         <div class="section-title">
             <div class="section-sub">
-                DEPUIS PLUSIEURS GÉNÉRATIONS
+                NOTRE AVENTURE
             </div>
             <h2>NOTRE HISTOIRE</h2>
         </div>
@@ -287,26 +321,27 @@ footer p{
         <div class="about">
 
             <p>
-                Cette page rassemble les souvenirs de notre famille :
-                voyages, anniversaires, naissances,
-                mariages et tous ces moments qui construisent notre histoire.
+                Chaque voyage, chaque éclat de rire, chaque coucher de soleil
+                partagé est une page supplémentaire de notre histoire.
+                Ce site rassemble nos plus beaux souvenirs et les moments
+                qui rendent notre aventure unique.
             </p>
 
             <div class="stats">
 
                 <div class="stat">
-                    <div class="stat-number">4</div>
-                    Générations
+                    <div class="stat-number">∞</div>
+                    Souvenirs
                 </div>
 
                 <div class="stat">
-                    <div class="stat-number">37</div>
-                    Membres
+                    <div class="stat-number">2</div>
+                    Cœurs
                 </div>
 
                 <div class="stat">
-                    <div class="stat-number">12</div>
-                    Pays visités
+                    <div class="stat-number">1</div>
+                    Histoire
                 </div>
 
             </div>
@@ -330,10 +365,13 @@ footer p{
 
         <div class="gallery-grid">
 
-            <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1200">
-            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1200">
-            <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=1200">
-            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200" alt="Plage">
+
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200" alt="Coucher de soleil">
+
+            <img src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?q=80&w=1200" alt="Coeur">
+
+            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200" alt="Couple">
 
         </div>
 
@@ -347,7 +385,7 @@ footer p{
 
         <div class="section-title">
             <div class="section-sub">
-                À VENIR
+                NOS PROCHAINS RÊVES
             </div>
             <h2>ÉVÉNEMENTS</h2>
         </div>
@@ -355,15 +393,58 @@ footer p{
         <div class="timeline">
 
             <div class="event">
-                🎂 Anniversaire de Mamie - 12 juillet
+                🌅 Nouveau voyage à organiser ensemble
             </div>
 
             <div class="event">
-                🏖 Vacances familiales - Août
+                🏝 Week-end au bord de la mer
             </div>
 
             <div class="event">
-                🎄 Noël en famille - Décembre
+                ❤️ Encore mille souvenirs à créer
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="nous">
+
+    <div class="container">
+
+        <div class="section-title">
+            <div class="section-sub">
+                DEUX ÂMES, UNE AVENTURE
+            </div>
+            <h2>MARION & WILFRIED</h2>
+        </div>
+
+        <div class="profiles">
+
+            <div class="profile-card">
+
+                <h3>MARION</h3>
+
+                <p>
+                    Douce, lumineuse et pleine d'énergie.
+                    Marion apporte du bonheur dans chaque instant
+                    et transforme les moments simples en souvenirs précieux.
+                </p>
+
+            </div>
+
+            <div class="profile-card">
+
+                <h3>WILFRIED</h3>
+
+                <p>
+                    Curieux, passionné et toujours prêt à découvrir
+                    de nouveaux horizons. Wilfried aime partager
+                    les voyages, les émotions et les aventures de la vie.
+                </p>
+
             </div>
 
         </div>
@@ -374,7 +455,7 @@ footer p{
 
 <footer>
     <p>
-        © 2025 Famille Martin - Tous droits réservés
+        ❤️ Marion & Wilfried • 2026 ❤️
     </p>
 </footer>
 
