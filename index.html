@@ -4,458 +4,467 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Marion & Wilfried ❤️</title>
+<title>Marion & Wilfried</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:'Montserrat',sans-serif;
-background:linear-gradient(135deg,#06142d,#102b5e);
-color:white;
-overflow-x:hidden;
+    font-family:'Montserrat',sans-serif;
+    background:#071733;
+    color:white;
+    overflow-x:hidden;
 }
-
-/* MUSIQUE */
-
-#musicBtn{
-position:fixed;
-right:25px;
-bottom:25px;
-width:70px;
-height:70px;
-border:none;
-border-radius:50%;
-font-size:28px;
-cursor:pointer;
-z-index:9999;
-background:rgba(255,255,255,.15);
-backdrop-filter:blur(15px);
-color:white;
-box-shadow:0 0 25px rgba(255,255,255,.4);
-transition:.3s;
-}
-
-#musicBtn:hover{
-transform:scale(1.1);
-}
-
-/* COEURS */
-
-.heart{
-position:fixed;
-bottom:-20px;
-font-size:20px;
-animation:floatUp linear infinite;
-opacity:.7;
-pointer-events:none;
-}
-
-@keyframes floatUp{
-from{
-transform:translateY(0);
-opacity:0;
-}
-20%{
-opacity:1;
-}
-to{
-transform:translateY(-110vh);
-opacity:0;
-}
-}
-
-/* NAV */
 
 nav{
-position:fixed;
-top:0;
-width:100%;
-z-index:999;
-background:rgba(0,0,0,.25);
-backdrop-filter:blur(12px);
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:rgba(5,15,35,.85);
+    backdrop-filter:blur(10px);
 }
 
 .nav-container{
-max-width:1200px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
 }
 
 .logo{
-font-weight:600;
-letter-spacing:4px;
+    font-size:1.2rem;
+    letter-spacing:4px;
+    font-weight:600;
 }
 
 .menu a{
-color:white;
-text-decoration:none;
-margin-left:25px;
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    letter-spacing:2px;
+    font-size:.9rem;
 }
-
-/* HERO */
 
 .hero{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-position:relative;
-overflow:hidden;
-
-background:
-linear-gradient(rgba(5,15,35,.4),rgba(5,15,35,.8)),
-url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=2000");
-
-background-size:cover;
-background-position:center;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-width:800px;
-height:800px;
-border-radius:50%;
-background:radial-gradient(circle,
-rgba(255,255,255,.25),
-transparent 70%);
-animation:pulse 6s infinite;
-}
-
-@keyframes pulse{
-0%,100%{
-transform:scale(1);
-}
-50%{
-transform:scale(1.3);
-}
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(7,23,51,.55),rgba(7,23,51,.75)),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2000");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
 }
 
 .hero-content{
-position:relative;
-z-index:2;
-max-width:900px;
-padding:20px;
+    max-width:900px;
+    padding:20px;
+}
+
+.hero-subtitle{
+    letter-spacing:8px;
+    font-size:.9rem;
+    margin-bottom:30px;
+    opacity:.9;
 }
 
 .hero-title{
-font-family:'Caveat',cursive;
-font-size:7rem;
-text-shadow:0 0 30px rgba(255,255,255,.6);
-}
-
-.hero-sub{
-letter-spacing:8px;
-margin-bottom:20px;
+    font-family:'Caveat',cursive;
+    font-size:7rem;
+    margin-bottom:30px;
 }
 
 .hero-text{
-max-width:700px;
-margin:auto;
-line-height:1.8;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+    opacity:.95;
 }
 
 .btn{
-display:inline-block;
-margin-top:40px;
-padding:18px 50px;
-border-radius:50px;
-border:2px solid white;
-color:white;
-text-decoration:none;
-transition:.3s;
+    display:inline-block;
+    margin-top:40px;
+    padding:18px 50px;
+    border:2px solid rgba(255,255,255,.8);
+    border-radius:50px;
+    color:white;
+    text-decoration:none;
+    letter-spacing:3px;
+    transition:.3s;
 }
 
 .btn:hover{
-background:white;
-color:#0b1f45;
+    background:white;
+    color:#071733;
 }
 
 section{
-padding:120px 20px;
+    padding:120px 20px;
 }
 
 .container{
-max-width:1200px;
-margin:auto;
+    max-width:1200px;
+    margin:auto;
 }
 
 .section-title{
-text-align:center;
-margin-bottom:60px;
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-sub{
+    letter-spacing:6px;
+    opacity:.7;
+    margin-bottom:15px;
 }
 
 .section-title h2{
-font-size:3rem;
+    font-size:3rem;
+    letter-spacing:8px;
 }
 
-.glass{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.15);
-border-radius:20px;
-padding:40px;
+.about{
+    text-align:center;
 }
 
-/* STATS */
+.about p{
+    max-width:800px;
+    margin:auto;
+    line-height:2;
+    opacity:.9;
+}
 
 .stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:25px;
-margin-top:50px;
+    margin-top:70px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:30px;
 }
 
 .stat{
-text-align:center;
+    padding:40px;
+    background:rgba(255,255,255,.05);
+    border-radius:20px;
+    backdrop-filter:blur(5px);
 }
 
-.number{
-font-size:3rem;
-font-weight:bold;
+.stat-number{
+    font-size:3rem;
+    margin-bottom:10px;
 }
-
-/* GALERIE */
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
+    background:#0a2148;
 }
 
-.gallery img{
-width:100%;
-height:320px;
-object-fit:cover;
-border-radius:20px;
-transition:.4s;
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
 }
 
-.gallery img:hover{
-transform:scale(1.05);
+.gallery-grid img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:.4s;
 }
 
-/* FOOTER */
+.gallery-grid img:hover{
+    transform:scale(1.03);
+}
+
+.timeline{
+    display:grid;
+    gap:30px;
+}
+
+.event{
+    background:rgba(255,255,255,.05);
+    padding:30px;
+    border-left:4px solid white;
+    border-radius:10px;
+}
+
+.profiles{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+
+.profile-card{
+    background:rgba(255,255,255,.05);
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    backdrop-filter:blur(5px);
+}
+
+.profile-card h3{
+    margin-bottom:20px;
+    letter-spacing:4px;
+    font-size:1.5rem;
+}
+
+.profile-card p{
+    line-height:1.9;
+    opacity:.9;
+}
 
 footer{
-padding:60px 20px;
-text-align:center;
-background:#050d1f;
+    background:#041124;
+    padding:60px 20px;
+    text-align:center;
+}
+
+footer p{
+    opacity:.7;
 }
 
 @media(max-width:768px){
 
 .hero-title{
-font-size:4rem;
+    font-size:4rem;
 }
 
 .menu{
-display:none;
+    display:none;
+}
+
+.section-title h2{
+    font-size:2rem;
+}
+
+.hero-subtitle{
+    letter-spacing:4px;
 }
 
 }
 
 </style>
 </head>
+
 <body>
 
-<audio id="bgMusic" loop>
-<source src="musique/jattendslamour.mp3" type="audio/mpeg">
-</audio>
-
-<button id="musicBtn">🔊</button>
-
 <nav>
-<div class="nav-container">
-<div class="logo">MARION & WILFRIED</div>
+    <div class="nav-container">
 
-<div class="menu">
-<a href="#histoire">Histoire</a>
-<a href="#photos">Photos</a>
-<a href="#nous">Nous</a>
-</div>
-</div>
+        <div class="logo">
+            MARION & WILFRIED
+        </div>
+
+        <div class="menu">
+            <a href="#histoire">HISTOIRE</a>
+            <a href="#photos">PHOTOS</a>
+            <a href="#evenements">ÉVÉNEMENTS</a>
+            <a href="#nous">NOUS</a>
+        </div>
+
+    </div>
 </nav>
 
 <section class="hero">
 
-<div class="hero-content">
+    <div class="hero-content">
 
-<div class="hero-sub">
-UNE HISTOIRE UNIQUE
-</div>
+        <div class="hero-subtitle">
+            AMOUR • TRAVAIL  • SOUVENIRS
+        </div>
 
-<h1 class="hero-title">
-Marion & Wilfried
-</h1>
+        <div class="hero-title">
+            Marion & Wilfried
+        </div>
 
-<p class="hero-text">
-Une histoire née entre les journées de travail,
-les fous rires, les cafés et les moments partagés.
-❤️
-</p>
+        <p class="hero-text">
+                Une histoire écrite au fil des journées de travail, des éclats de rire et des soirées partagées. Parce que la vie est pleine de surprises… mais les meilleures sont souvent nées autour d’un café. ☕😉
+        </p>
 
-<a href="#histoire" class="btn">
-Découvrir
-</a>
+        <a href="#histoire" class="btn">
+            DÉCOUVRIR
+        </a>
 
-</div>
+    </div>
 
 </section>
 
 <section id="histoire">
 
-<div class="container">
+    <div class="container">
 
-<div class="section-title">
-<h2>Notre Histoire</h2>
-</div>
+        <div class="section-title">
+            <div class="section-sub">
+                NOTRE AVENTURE
+            </div>
+            <h2>NOTRE HISTOIRE</h2>
+        </div>
 
-<div class="glass">
+        <div class="about">
 
-<p style="line-height:2;text-align:center;">
-Chaque sourire, chaque voyage, chaque souvenir
-écrit une nouvelle page de notre aventure.
-</p>
+            <p>
+                Chaque voyage, chaque éclat de rire, chaque coucher de soleil
+                partagé est une page supplémentaire de notre histoire.
+                Ce site rassemble nos plus beaux souvenirs et les moments
+                qui rendent notre aventure unique.
+            </p>
 
-<div class="stats">
+            <div class="stats">
 
-<div class="glass stat">
-<div class="number">∞</div>
-Souvenirs
-</div>
+                <div class="stat">
+                    <div class="stat-number">∞</div>
+                    Souvenirs
+                </div>
 
-<div class="glass stat">
-<div class="number">2</div>
-Cœurs
-</div>
+                <div class="stat">
+                    <div class="stat-number">2</div>
+                    Cœurs
+                </div>
 
-<div class="glass stat">
-<div class="number">1</div>
-Histoire
-</div>
+                <div class="stat">
+                    <div class="stat-number">1</div>
+                    Histoire
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
-<section id="photos">
+<section id="photos" class="gallery">
 
-<div class="container">
+    <div class="container">
 
-<div class="section-title">
-<h2>Nos Moments</h2>
-</div>
+        <div class="section-title">
+            <div class="section-sub">
+                NOS PLUS BEAUX MOMENTS
+            </div>
+            <h2>GALERIE</h2>
+        </div>
 
-<div class="gallery">
+        <div class="gallery-grid">
 
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200" alt="Plage">
 
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200" alt="Coucher de soleil">
 
-<img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200">
+            <img src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?q=80&w=1200" alt="Coeur">
 
-<img src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?q=80&w=1200">
+            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200" alt="Couple">
 
-</div>
+        </div>
 
-</div>
+    </div>
+
+</section>
+
+<section id="evenements">
+
+    <div class="container">
+
+        <div class="section-title">
+            <div class="section-sub">
+                NOS PROCHAINS RÊVES
+            </div>
+            <h2>ÉVÉNEMENTS</h2>
+        </div>
+
+        <div class="timeline">
+
+            <div class="event">
+                🌅 Nouveau voyage à organiser ensemble
+            </div>
+
+            <div class="event">
+                🏝 Week-end au bord de la mer
+            </div>
+
+            <div class="event">
+                ❤️ Encore mille souvenirs à créer
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 <section id="nous">
 
-<div class="container">
+    <div class="container">
 
-<div class="section-title">
-<h2>Marion & Wilfried</h2>
-</div>
+        <div class="section-title">
+            <div class="section-sub">
+                DEUX ÂMES, UNE AVENTURE
+            </div>
+            <h2>MARION & WILFRIED</h2>
+        </div>
 
-<div class="glass">
+        <div class="profiles">
 
-<p style="line-height:2;text-align:center;">
-Deux personnalités différentes,
-une seule aventure.
-❤️
-</p>
+            <div class="profile-card">
 
-</div>
+                <h3>MARION</h3>
 
-</div>
+                <p>
+                    Marion, femme Bélier certifiée 100 % énergie, impulsive comme une notification à 3 h du matin, mais tellement attachante qu’on lui suffit d’un sourire pour se faire pardonner. Sous son caractère bien trempé se cache un cœur énorme, toujours prête à prendre soin des autres… et surtout des animaux.
+
+Son carburant officiel ? Un mélange audacieux de Lipton Ice Tea et de Nescafé Cappuccino soluble. Les experts hésitent encore à classer cette combinaison entre boisson énergétique et potion magique.
+
+Passionnée par les animaux, Marion semble posséder un don rare : elle communique avec eux. Cochon d’Inde, cheval, chien, chat… tous paraissent comprendre ce qu’elle raconte. Certains soupçonnent même qu’elle soit membre d’un réseau secret de diplomatie inter-espèces.
+
+Dotée d’une répartie légendaire, elle dégaine régulièrement sa phrase préférée : « Tu fais trop le mec ! ». Une expression polyvalente qu’elle peut utiliser dans à peu près toutes les situations, du simple désaccord à la plus grande catastrophe du siècle.
+
+En résumé, Marion c’est un cocktail explosif de spontanéité, de générosité, d’amour des animaux et de boissons improbables. Une femme capable de prendre une décision en deux secondes, de tenir une conversation sérieuse avec un cheval et de conclure le débat par un mémorable : « Tu fais trop le mec ! ». 🐹🐴☕🥤❤️🔥
+                </p>
+
+            </div>
+
+            <div class="profile-card">
+
+                <h3>WILFRIED</h3>
+
+                <p>
+                    Wilfried, homme Taureau, est connu pour son calme, sa stabilité et son tempérament réfléchi. Passionné de football, il suit avec enthousiasme le PSG et apprécie le sport sous toutes ses formes.
+
+Grand amateur de gastronomie, son plat préféré reste les lasagnes, qu’il pourrait déguster à n’importe quelle occasion. Lorsqu’il ne parle pas de football ou de cuisine, Wilfried aime consacrer son temps au jardinage. On le retrouve souvent chez Truffaut le dimanche, à la recherche de nouvelles plantes et d’idées pour embellir son jardin.
+
+Curieux de nature et toujours attentif à ce qui se passe autour de lui, il ne cache pas son goût pour les potins et les anecdotes du quotidien. Il aime analyser les situations sous tous les angles, tirer des conclusions et défendre ses points de vue avec assurance. Doté d’un solide sens de l’observation et d’une logique affûtée, il estime souvent avoir raison… et il faut reconnaître que c’est fréquemment le cas.
+
+Entre passion du ballon rond, amour du jardin, plaisir de bien manger et goût pour l’analyse, Wilfried cultive un art de vivre simple, convivial et authentique.
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 <footer>
-Marion & Wilfried • 2026 ❤️
+    <p>
+        Marion & Wilfried • 2026
+    </p>
 </footer>
 
-<script>
-
-const music=document.getElementById('bgMusic');
-const btn=document.getElementById('musicBtn');
-
-btn.addEventListener('click',()=>{
-
-if(music.paused){
-music.play();
-btn.innerHTML="🔊";
-}else{
-music.pause();
-btn.innerHTML="🔇";
-}
-
-});
-
-window.addEventListener('load',()=>{
-
-music.play().catch(()=>{
-btn.innerHTML="▶️";
-});
-
-});
-
-/* coeurs flottants */
-
-setInterval(()=>{
-
-const heart=document.createElement('div');
-
-heart.className='heart';
-heart.innerHTML='❤️';
-
-heart.style.left=Math.random()*100+'vw';
-heart.style.animationDuration=
-(5+Math.random()*6)+'s';
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},12000);
-
-},700);
-
-</script>
-
 </body>
-</html
+</html>
