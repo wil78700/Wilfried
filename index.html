@@ -258,6 +258,61 @@ footer p{
 }
 
 }
+.expressions-slider{
+    position:relative;
+    height:220px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.expression{
+    position:absolute;
+    opacity:0;
+    transform:translateY(30px);
+    transition:all .8s ease;
+    text-align:center;
+    max-width:900px;
+    width:100%;
+    padding:20px;
+    font-size:3rem;
+    font-family:'Caveat', cursive;
+    color:white;
+}
+
+.expression.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.slider-dots{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:20px;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:rgba(255,255,255,.25);
+    transition:.4s;
+}
+
+.dot.active{
+    background:white;
+    transform:scale(1.2);
+}
+
+@media(max-width:768px){
+
+    .expression{
+        font-size:2rem;
+    }
+
+}
 
 </style>
 </head>
@@ -383,25 +438,41 @@ footer p{
 
         <div class="section-title">
             <div class="section-sub">
-                NOS PROCHAINS RÊVES
+                LES PHRASES QUI RESTENT
             </div>
-            <h2>ÉVÉNEMENTS</h2>
+            <h2>NOS PLUS BELLES EXPRESSIONS</h2>
         </div>
 
-        <div class="timeline">
+        <div class="expressions-slider">
 
-            <div class="event">
-                🌅 Nouveau voyage à organiser ensemble
+            <div class="expression active">
+                « Tu fais trop le mec ! »
             </div>
 
-            <div class="event">
-                🏝 Week-end au bord de la mer
+            <div class="expression">
+                « En mode décontracte »
             </div>
 
-            <div class="event">
-                ❤️ Encore mille souvenirs à créer
+            <div class="expression">
+                « C'est too much »
             </div>
 
+            <div class="expression">
+                « Tu racontes n'importe quoi »
+            </div>
+
+            <div class="expression">
+                « C'est pas faux »
+            </div>
+
+        </div>
+
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
 
     </div>
@@ -520,6 +591,30 @@ document.getElementById('togglePlayer').addEventListener('click', function() {
     }
 
 });
+</script>
+<script>
+
+const expressions = document.querySelectorAll('.expression');
+const dots = document.querySelectorAll('.dot');
+
+let currentExpression = 0;
+
+setInterval(() => {
+
+    expressions[currentExpression].classList.remove('active');
+    dots[currentExpression].classList.remove('active');
+
+    currentExpression++;
+
+    if(currentExpression >= expressions.length){
+        currentExpression = 0;
+    }
+
+    expressions[currentExpression].classList.add('active');
+    dots[currentExpression].classList.add('active');
+
+}, 3500);
+
 </script>
 </body>
 </html>
