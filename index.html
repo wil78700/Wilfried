@@ -3,590 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Marion & Wilfried</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
-
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Montserrat',sans-serif;
-    background:#071733;
-    color:white;
-    overflow-x:hidden;
-}
-
-nav{
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-    background:rgba(5,15,35,.85);
-    backdrop-filter:blur(10px);
-}
-
-.nav-container{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px;
-}
-
-.logo{
-    font-size:1.2rem;
-    letter-spacing:4px;
-    font-weight:600;
-}
-
-.menu a{
-    color:white;
-    text-decoration:none;
-    margin-left:25px;
-    letter-spacing:2px;
-    font-size:.9rem;
-}
-
-.hero{
-    min-height:100vh;
-    background:
-    linear-gradient(rgba(7,23,51,.55),rgba(7,23,51,.75)),
-    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2000");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-}
-
-.hero-content{
-    max-width:900px;
-    padding:20px;
-}
-
-.hero-subtitle{
-    letter-spacing:8px;
-    font-size:.9rem;
-    margin-bottom:30px;
-    opacity:.9;
-}
-
-.hero-title{
-    font-family:'Caveat',cursive;
-    font-size:7rem;
-    margin-bottom:30px;
-}
-
-.hero-text{
-    max-width:700px;
-    margin:auto;
-    line-height:1.8;
-    opacity:.95;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:40px;
-    padding:18px 50px;
-    border:2px solid rgba(255,255,255,.8);
-    border-radius:50px;
-    color:white;
-    text-decoration:none;
-    letter-spacing:3px;
-    transition:.3s;
-}
-
-.btn:hover{
-    background:white;
-    color:#071733;
-}
-
-section{
-    padding:120px 20px;
-}
-
-.container{
-    max-width:1200px;
-    margin:auto;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:60px;
-}
-
-.section-sub{
-    letter-spacing:6px;
-    opacity:.7;
-    margin-bottom:15px;
-}
-
-.section-title h2{
-    font-size:3rem;
-    letter-spacing:8px;
-}
-
-.about{
-    text-align:center;
-}
-
-.about p{
-    max-width:800px;
-    margin:auto;
-    line-height:2;
-    opacity:.9;
-}
-
-.gallery{
-    background:#0a2148;
-}
-
-.gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-}
-
-.gallery-grid img{
-    width:100%;
-    height:320px;
-    object-fit:cover;
-    border-radius:15px;
-    transition:.4s;
-}
-
-.gallery-grid img:hover{
-    transform:scale(1.03);
-}
-
-.profiles{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-    margin-top:50px;
-}
-
-.profile-card{
-    background:rgba(255,255,255,.05);
-    padding:40px;
-    border-radius:20px;
-    text-align:center;
-    backdrop-filter:blur(5px);
-}
-
-.profile-card h3{
-    margin-bottom:20px;
-    letter-spacing:4px;
-    font-size:1.5rem;
-}
-
-.profile-card p{
-    line-height:1.9;
-    opacity:.9;
-}
-
-footer{
-    background:#041124;
-    padding:60px 20px;
-    text-align:center;
-}
-
-footer p{
-    opacity:.7;
-}
-
-.expressions-slider{
-    position:relative;
-    height:220px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-}
-
-.expression{
-    position:absolute;
-    opacity:0;
-    transform:translateY(30px);
-    transition:all .8s ease;
-    text-align:center;
-    max-width:900px;
-    width:100%;
-    padding:20px;
-    font-size:3rem;
-    font-family:'Caveat', cursive;
-    color:white;
-}
-
-.expression.active{
-    opacity:1;
-    transform:translateY(0);
-}
-
-.slider-dots{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    margin-top:20px;
-}
-
-.dot{
-    width:12px;
-    height:12px;
-    border-radius:50%;
-    background:rgba(255,255,255,.25);
-    transition:.4s;
-}
-
-.dot.active{
-    background:white;
-    transform:scale(1.2);
-}
-
-/* ═══════════════════════════════════════════
-   BANNIÈRE RÈGLES DU DUO
-═══════════════════════════════════════════ */
-
-.rules-banner {
-    background: linear-gradient(135deg, #0d1f40 0%, #112952 50%, #0a1a38 100%);
-    border-top: 1px solid rgba(255,255,255,.08);
-    border-bottom: 1px solid rgba(255,255,255,.08);
-    padding: 0 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.rules-banner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse 60% 80% at 10% 50%, rgba(255,200,100,.06) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 60% at 90% 50%, rgba(180,120,255,.05) 0%, transparent 70%);
-    pointer-events: none;
-}
-
-.rules-banner-inner {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    padding: 50px 0;
-    flex-wrap: wrap;
-}
-
-.rules-banner-text {
-    flex: 1;
-    min-width: 260px;
-}
-
-.rules-banner-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    letter-spacing: 5px;
-    font-size: .72rem;
-    opacity: .6;
-    margin-bottom: 14px;
-    text-transform: uppercase;
-}
-
-.rules-banner-eyebrow::before,
-.rules-banner-eyebrow::after {
-    content: '';
-    flex: 0 0 30px;
-    height: 1px;
-    background: rgba(255,255,255,.3);
-}
-
-.rules-banner-title {
-    font-family: 'Caveat', cursive;
-    font-size: 3.2rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 10px;
-}
-
-.rules-banner-sub {
-    font-size: .82rem;
-    opacity: .6;
-    letter-spacing: 1px;
-    line-height: 1.7;
-    max-width: 420px;
-}
-
-.rules-banner-cta {
-    flex-shrink: 0;
-}
-
-.btn-rules {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 18px 38px;
-    background: transparent;
-    border: 1.5px solid rgba(255,255,255,.5);
-    border-radius: 60px;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-size: .82rem;
-    letter-spacing: 3px;
-    cursor: pointer;
-    transition: all .35s ease;
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-rules::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255,255,255,.07);
-    transform: translateX(-100%);
-    transition: transform .35s ease;
-}
-
-.btn-rules:hover::before {
-    transform: translateX(0);
-}
-
-.btn-rules:hover {
-    border-color: rgba(255,255,255,.9);
-    box-shadow: 0 0 30px rgba(255,255,255,.08);
-}
-
-.btn-rules-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(255,255,255,.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    transition: transform .35s ease;
-}
-
-.btn-rules:hover .btn-rules-icon {
-    transform: rotate(15deg) scale(1.1);
-}
-
-.rules-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255,255,255,.07);
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 30px;
-    padding: 6px 14px;
-    font-size: .7rem;
-    letter-spacing: 2px;
-    opacity: .8;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.rules-badge-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #ffd580;
-    animation: pulse-dot 2s ease infinite;
-}
-
-@keyframes pulse-dot {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: .5; transform: scale(.7); }
-}
-
-/* ═══════════════════════════════════════════
-   POPUP RÈGLES
-═══════════════════════════════════════════ */
-
-.rules-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(4, 10, 25, .92);
-    backdrop-filter: blur(14px);
-    z-index: 9998;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .4s ease;
-}
-
-.rules-overlay.open {
-    opacity: 1;
-    pointer-events: all;
-}
-
-.rules-modal {
-    background: linear-gradient(160deg, #0e2149 0%, #091630 100%);
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 28px;
-    max-width: 780px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    padding: 52px 52px 44px;
-    position: relative;
-    transform: translateY(30px) scale(.97);
-    transition: transform .4s cubic-bezier(.22,1,.36,1);
-    box-shadow: 0 40px 100px rgba(0,0,0,.6);
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,.15) transparent;
-}
-
-.rules-overlay.open .rules-modal {
-    transform: translateY(0) scale(1);
-}
-
-.rules-modal::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255,213,128,.5), rgba(200,160,255,.5), transparent);
-    border-radius: 28px 28px 0 0;
-}
-
-.modal-close {
-    position: absolute;
-    top: 22px;
-    right: 22px;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: rgba(255,255,255,.07);
-    border: 1px solid rgba(255,255,255,.12);
-    color: white;
-    font-size: 1.1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: .25s;
-}
-
-.modal-close:hover {
-    background: rgba(255,255,255,.14);
-    transform: rotate(90deg);
-}
-
-.modal-header {
-    text-align: center;
-    margin-bottom: 44px;
-}
-
-.modal-eyebrow {
-    letter-spacing: 6px;
-    font-size: .7rem;
-    opacity: .5;
-    margin-bottom: 14px;
-    text-transform: uppercase;
-}
-
-.modal-title {
-    font-family: 'Caveat', cursive;
-    font-size: 3.6rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 10px;
-}
-
-.modal-subtitle {
-    font-size: .8rem;
-    opacity: .5;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.rules-list {
-    display: grid;
-    gap: 14px;
-    list-style: none;
-}
-
-.rule-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.07);
-    border-radius: 14px;
-    padding: 18px 22px;
-    transition: background .25s, border-color .25s;
-}
-
-.rule-item:hover {
-    background: rgba(255,255,255,.07);
-    border-color: rgba(255,255,255,.13);
-}
-
-.rule-number {
-    font-family: 'Caveat', cursive;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: rgba(255,213,128,.55);
-    min-width: 32px;
-    line-height: 1;
-    padding-top: 2px;
-}
-
-.rule-text {
-    font-size: .88rem;
-    line-height: 1.65;
-    opacity: .88;
-    font-weight: 300;
-}
-
-.rule-text strong {
-    font-weight: 600;
-    opacity: 1;
-}
-
-.modal-footer {
-    margin-top: 36px;
-    text-align: center;
-    padding-top: 28px;
-    border-top: 1px solid rgba(255,255,255,.07);
-}
-
-.modal-footer-text {
-    font-family: 'Caveat', cursive;
-    font-size: 1.6rem;
-    opacity: .7;
-}
-
-.modal-seal {
-    margin-top: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: .72rem;
-    letter-spacing: 3px;
-    opacity: .35;
-    text-transform: uppercase;
-}
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{ font-family:'Montserrat',sans-serif; background:#071733; color:white; overflow-x:hidden; }
+nav{ position:fixed; width:100%; top:0; z-index:1000; background:rgba(5,15,35,.85); backdrop-filter:blur(10px); }
+.nav-container{ max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:20px; }
+.logo{ font-size:1.2rem; letter-spacing:4px; font-weight:600; }
+.menu a{ color:white; text-decoration:none; margin-left:25px; letter-spacing:2px; font-size:.9rem; }
+.hero{ min-height:100vh; background: linear-gradient(rgba(7,23,51,.55),rgba(7,23,51,.75)), url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2000"); background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center; text-align:center; }
+.hero-content{ max-width:900px; padding:20px; }
+.hero-subtitle{ letter-spacing:8px; font-size:.9rem; margin-bottom:30px; opacity:.9; }
+.hero-title{ font-family:'Caveat',cursive; font-size:7rem; margin-bottom:30px; }
+.hero-text{ max-width:700px; margin:auto; line-height:1.8; opacity:.95; }
+.btn{ display:inline-block; margin-top:40px; padding:18px 50px; border:2px solid rgba(255,255,255,.8); border-radius:50px; color:white; text-decoration:none; letter-spacing:3px; transition:.3s; }
+.btn:hover{ background:white; color:#071733; }
+section{ padding:120px 20px; }
+.container{ max-width:1200px; margin:auto; }
+.section-title{ text-align:center; margin-bottom:60px; }
+.section-sub{ letter-spacing:6px; opacity:.7; margin-bottom:15px; }
+.section-title h2{ font-size:3rem; letter-spacing:8px; }
+.about{ text-align:center; }
+.about p{ max-width:800px; margin:auto; line-height:2; opacity:.9; }
+.gallery{ background:#0a2148; }
+.gallery-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+.gallery-grid img{ width:100%; height:320px; object-fit:cover; border-radius:15px; transition:.4s; }
+.gallery-grid img:hover{ transform:scale(1.03); }
+.profiles{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; margin-top:50px; }
+.profile-card{ background:rgba(255,255,255,.05); padding:40px; border-radius:20px; text-align:center; backdrop-filter:blur(5px); }
+.profile-card h3{ margin-bottom:20px; letter-spacing:4px; font-size:1.5rem; }
+.profile-card p{ line-height:1.9; opacity:.9; }
+footer{ background:#041124; padding:60px 20px; text-align:center; }
+footer p{ opacity:.7; }
+.expressions-slider{ position:relative; height:220px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.expression{ position:absolute; opacity:0; transform:translateY(30px); transition:all .8s ease; text-align:center; max-width:900px; width:100%; padding:20px; font-size:3rem; font-family:'Caveat', cursive; color:white; }
+.expression.active{ opacity:1; transform:translateY(0); }
+.slider-dots{ display:flex; justify-content:center; gap:12px; margin-top:20px; }
+.dot{ width:12px; height:12px; border-radius:50%; background:rgba(255,255,255,.25); transition:.4s; }
+.dot.active{ background:white; transform:scale(1.2); }
+
+/* BANNIÈRE */
+.rules-banner{ background:linear-gradient(135deg,#0d1f40 0%,#112952 50%,#0a1a38 100%); border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(255,255,255,.08); padding:0 20px; position:relative; overflow:hidden; }
+.rules-banner::before{ content:''; position:absolute; inset:0; background: radial-gradient(ellipse 60% 80% at 10% 50%,rgba(255,200,100,.06) 0%,transparent 70%), radial-gradient(ellipse 40% 60% at 90% 50%,rgba(180,120,255,.05) 0%,transparent 70%); pointer-events:none; }
+.rules-banner-inner{ max-width:1200px; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:30px; padding:50px 0; flex-wrap:wrap; }
+.rules-banner-text{ flex:1; min-width:260px; }
+.rules-banner-eyebrow{ display:flex; align-items:center; gap:10px; letter-spacing:5px; font-size:.72rem; opacity:.6; margin-bottom:14px; text-transform:uppercase; }
+.rules-banner-eyebrow::before,.rules-banner-eyebrow::after{ content:''; flex:0 0 30px; height:1px; background:rgba(255,255,255,.3); }
+.rules-banner-title{ font-family:'Caveat',cursive; font-size:3.2rem; font-weight:700; line-height:1.1; margin-bottom:10px; }
+.rules-banner-sub{ font-size:.82rem; opacity:.6; letter-spacing:1px; line-height:1.7; max-width:420px; }
+.rules-banner-cta{ flex-shrink:0; }
+.btn-rules{ display:inline-flex; align-items:center; gap:12px; padding:18px 38px; background:transparent; border:1.5px solid rgba(255,255,255,.5); border-radius:60px; color:white; font-family:'Montserrat',sans-serif; font-size:.82rem; letter-spacing:3px; cursor:pointer; transition:all .35s ease; text-transform:uppercase; position:relative; overflow:hidden; }
+.btn-rules::before{ content:''; position:absolute; inset:0; background:rgba(255,255,255,.07); transform:translateX(-100%); transition:transform .35s ease; }
+.btn-rules:hover::before{ transform:translateX(0); }
+.btn-rules:hover{ border-color:rgba(255,255,255,.9); box-shadow:0 0 30px rgba(255,255,255,.08); }
+.btn-rules-icon{ width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; font-size:1rem; transition:transform .35s ease; }
+.btn-rules:hover .btn-rules-icon{ transform:rotate(15deg) scale(1.1); }
+.rules-badge{ display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:30px; padding:6px 14px; font-size:.7rem; letter-spacing:2px; opacity:.8; margin-bottom:20px; text-transform:uppercase; }
+.rules-badge-dot{ width:6px; height:6px; border-radius:50%; background:#ffd580; animation:pulse-dot 2s ease infinite; }
+@keyframes pulse-dot{ 0%,100%{ opacity:1; transform:scale(1); } 50%{ opacity:.5; transform:scale(.7); } }
+
+/* MODULE DATE */
+.date-module{ background:#071733; padding:100px 20px; position:relative; overflow:hidden; }
+.date-module::before{ content:''; position:absolute; inset:0; background:radial-gradient(ellipse 50% 60% at 50% 50%,rgba(255,213,128,.05) 0%,transparent 70%); pointer-events:none; }
+.date-module-inner{ max-width:900px; margin:auto; display:flex; flex-direction:column; align-items:center; text-align:center; gap:40px; }
+.date-module-eyebrow{ letter-spacing:6px; font-size:.72rem; opacity:.5; text-transform:uppercase; }
+.date-stamp{ position:relative; display:inline-flex; flex-direction:column; align-items:center; justify-content:center; width:220px; height:220px; border:3px solid rgba(255,213,128,.35); border-radius:50%; padding:20px; gap:4px; }
+.date-stamp::before{ content:''; position:absolute; inset:6px; border:1px solid rgba(255,213,128,.15); border-radius:50%; }
+.date-stamp::after{ content:'★ OFFICIEL ★'; position:absolute; bottom:30px; font-size:.55rem; letter-spacing:4px; color:rgba(255,213,128,.5); text-transform:uppercase; }
+.date-stamp-day{ font-family:'Caveat',cursive; font-size:5rem; font-weight:700; color:rgba(255,213,128,.85); line-height:1; }
+.date-stamp-month{ font-size:.75rem; letter-spacing:5px; text-transform:uppercase; opacity:.7; margin-top:2px; }
+.date-stamp-year{ font-family:'Caveat',cursive; font-size:1.8rem; color:rgba(255,213,128,.6); line-height:1; }
+.date-module-text{ max-width:600px; }
+.date-module-title{ font-family:'Caveat',cursive; font-size:2.8rem; font-weight:700; margin-bottom:16px; line-height:1.2; }
+.date-module-desc{ font-size:.85rem; line-height:1.9; opacity:.65; letter-spacing:.5px; }
+
+/* POPUP */
+.rules-overlay{ position:fixed; inset:0; background:rgba(4,10,25,.92); backdrop-filter:blur(14px); z-index:9998; display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity .4s ease; }
+.rules-overlay.open{ opacity:1; pointer-events:all; }
+.rules-modal{ background:linear-gradient(160deg,#0e2149 0%,#091630 100%); border:1px solid rgba(255,255,255,.1); border-radius:28px; max-width:780px; width:100%; max-height:90vh; overflow-y:auto; padding:52px 52px 44px; position:relative; transform:translateY(30px) scale(.97); transition:transform .4s cubic-bezier(.22,1,.36,1); box-shadow:0 40px 100px rgba(0,0,0,.6); scrollbar-width:thin; scrollbar-color:rgba(255,255,255,.15) transparent; }
+.rules-overlay.open .rules-modal{ transform:translateY(0) scale(1); }
+.rules-modal::before{ content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,rgba(255,213,128,.5),rgba(200,160,255,.5),transparent); border-radius:28px 28px 0 0; }
+.modal-close{ position:absolute; top:22px; right:22px; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); color:white; font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:.25s; }
+.modal-close:hover{ background:rgba(255,255,255,.14); transform:rotate(90deg); }
+.modal-header{ text-align:center; margin-bottom:44px; }
+.modal-eyebrow{ letter-spacing:6px; font-size:.7rem; opacity:.5; margin-bottom:14px; text-transform:uppercase; }
+.modal-title{ font-family:'Caveat',cursive; font-size:3.6rem; font-weight:700; line-height:1.1; margin-bottom:10px; }
+.modal-subtitle{ font-size:.8rem; opacity:.5; letter-spacing:2px; text-transform:uppercase; }
+.rules-list{ display:grid; gap:14px; list-style:none; }
+.rule-item{ display:flex; align-items:flex-start; gap:16px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); border-radius:14px; padding:18px 22px; transition:background .25s,border-color .25s; }
+.rule-item:hover{ background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.13); }
+.rule-number{ font-family:'Caveat',cursive; font-size:1.6rem; font-weight:700; color:rgba(255,213,128,.55); min-width:32px; line-height:1; padding-top:2px; }
+.rule-text{ font-size:.88rem; line-height:1.65; opacity:.88; font-weight:300; }
+.rule-text strong{ font-weight:600; opacity:1; }
+.modal-footer{ margin-top:36px; text-align:center; padding-top:28px; border-top:1px solid rgba(255,255,255,.07); }
+.modal-footer-text{ font-family:'Caveat',cursive; font-size:1.6rem; opacity:.7; }
+.modal-seal{ margin-top:20px; display:inline-flex; align-items:center; gap:8px; font-size:.72rem; letter-spacing:3px; opacity:.35; text-transform:uppercase; }
 
 @media(max-width:768px){
     .hero-title{ font-size:4rem; }
@@ -594,21 +107,24 @@ footer p{
     .section-title h2{ font-size:2rem; }
     .hero-subtitle{ letter-spacing:4px; }
     .expression{ font-size:2rem; }
-    .rules-banner-inner{ flex-direction:column; align-items:flex-start; gap:24px; }
+    .rules-banner-inner{ flex-direction:column; align-items:center; text-align:center; gap:24px; }
     .rules-banner-title{ font-size:2.4rem; }
+    .rules-banner-sub{ margin:0 auto; }
+    .rules-banner-eyebrow{ justify-content:center; }
+    .rules-badge{ margin:0 auto 20px; }
     .btn-rules{ width:100%; justify-content:center; }
+    .date-stamp{ width:180px; height:180px; }
+    .date-stamp-day{ font-size:4rem; }
+    .date-module-title{ font-size:2.2rem; }
 }
-
 @media(max-width:640px){
     .rules-modal{ padding:36px 24px 30px; border-radius:20px; }
     .modal-title{ font-size:2.6rem; }
     .rule-item{ padding:14px 16px; }
     .rule-text{ font-size:.82rem; }
 }
-
 </style>
 </head>
-
 <body>
 
 <nav>
@@ -627,9 +143,7 @@ footer p{
     <div class="hero-content">
         <div class="hero-subtitle">AMOUR • TRAVAIL • SOUVENIRS</div>
         <div class="hero-title">Marion & Wilfried</div>
-        <p class="hero-text">
-            Une histoire écrite au fil des journées de travail, des éclats de rire et des soirées partagées. Parce que la vie est pleine de surprises… mais les meilleures sont souvent nées autour d'un café. ☕😉
-        </p>
+        <p class="hero-text">Une histoire écrite au fil des journées de travail, des éclats de rire et des soirées partagées. Parce que la vie est pleine de surprises… mais les meilleures sont souvent nées autour d'un café. ☕😉</p>
         <a href="#histoire" class="btn">DÉCOUVRIR</a>
     </div>
 </section>
@@ -638,23 +152,32 @@ footer p{
 <div class="rules-banner">
     <div class="rules-banner-inner">
         <div class="rules-banner-text">
-            <div class="rules-badge">
-                <span class="rules-badge-dot"></span>
-                Constitution du duo
-            </div>
-            <div class="rules-banner-eyebrow">
-                <span></span> Accord bilatéral officiel <span></span>
-            </div>
+            <div class="rules-badge"><span class="rules-badge-dot"></span>Article I — Constitution du duo</div>
+            <div class="rules-banner-eyebrow"><span></span> Accord bilatéral officiel <span></span></div>
             <div class="rules-banner-title">Les Règles du Duo</div>
-            <p class="rules-banner-sub">
-                Toute grande histoire mérite ses propres lois. Les voilà, gravées dans le marbre (et le numérique).
-            </p>
+            <p class="rules-banner-sub">Toute grande histoire mérite ses propres lois. Les voilà, gravées dans le marbre (et le numérique).</p>
         </div>
         <div class="rules-banner-cta">
             <button class="btn-rules" id="openRules">
                 <span class="btn-rules-icon">📜</span>
                 Lire la Constitution
             </button>
+        </div>
+    </div>
+</div>
+
+<!-- MODULE DATE -->
+<div class="date-module">
+    <div class="date-module-inner">
+        <div class="date-module-eyebrow">Le jour où tout a basculé</div>
+        <div class="date-stamp">
+            <span class="date-stamp-day">15</span>
+            <span class="date-stamp-month">Janvier</span>
+            <span class="date-stamp-year">2026</span>
+        </div>
+        <div class="date-module-text">
+            <div class="date-module-title">Là où tout a vraiment commencé.</div>
+            <p class="date-module-desc">Pas un hasard, pas une coïncidence. Ce jour-là, quelque chose a changé. Une conversation, un regard, un moment suspendu dans le temps qui a tout mis en mouvement. Le 15 janvier 2026 restera gravé comme le point de départ de notre aventure à deux. Avant, c'était la vie. Après, c'était notre histoire.</p>
         </div>
     </div>
 </div>
@@ -666,12 +189,7 @@ footer p{
             <h2>NOTRE HISTOIRE</h2>
         </div>
         <div class="about">
-            <p>
-                Chaque voyage, chaque éclat de rire, chaque coucher de soleil
-                partagé est une page supplémentaire de notre histoire.
-                Ce site rassemble nos plus beaux souvenirs et les moments
-                qui rendent notre aventure unique.
-            </p>
+            <p>Chaque voyage, chaque éclat de rire, chaque coucher de soleil partagé est une page supplémentaire de notre histoire. Ce site rassemble nos plus beaux souvenirs et les moments qui rendent notre aventure unique.</p>
         </div>
     </div>
 </section>
@@ -702,7 +220,7 @@ footer p{
             <div class="expression">« En mode décontracte »</div>
             <div class="expression">« C'est too much »</div>
             <div class="expression">« Tu racontes n'importe quoi »</div>
-            <div class="expression">« Mon rêve... »</div>
+            <div class="expression">« C'est pas faux »</div>
         </div>
         <div class="slider-dots">
             <span class="dot active"></span>
@@ -723,8 +241,7 @@ footer p{
         <div class="profiles">
             <div class="profile-card">
                 <h3>MARION</h3>
-                <p>
-                    Marion, femme Bélier certifiée 100 % énergie, impulsive comme une notification à 3 h du matin, mais tellement attachante qu'on lui suffit d'un sourire pour se faire pardonner. Sous son caractère bien trempé se cache un cœur énorme, toujours prête à prendre soin des autres… et surtout des animaux.
+                <p>Marion, femme Bélier certifiée 100 % énergie, impulsive comme une notification à 3 h du matin, mais tellement attachante qu'on lui suffit d'un sourire pour se faire pardonner. Sous son caractère bien trempé se cache un cœur énorme, toujours prête à prendre soin des autres… et surtout des animaux.
 
 Son carburant officiel ? Un mélange audacieux de Lipton Ice Tea, de jenifer et de Nescafé Cappuccino soluble. Les experts hésitent encore à classer cette combinaison entre boisson énergétique et potion magique.
 
@@ -732,20 +249,17 @@ Passionnée par les animaux, Marion semble posséder un don rare : elle communiq
 
 Dotée d'une répartie légendaire, elle dégaine régulièrement sa phrase préférée : « Tu fais trop le mec ! ». Une expression polyvalente qu'elle peut utiliser dans à peu près toutes les situations, du simple désaccord à la plus grande catastrophe du siècle.
 
-En résumé, Marion c'est un cocktail explosif de spontanéité, de générosité, d'amour des animaux et de boissons improbables. 🐹🐴☕🥤❤️🔥
-                </p>
+En résumé, Marion c'est un cocktail explosif de spontanéité, de générosité, d'amour des animaux et de boissons improbables. 🐹🐴☕🥤❤️🔥</p>
             </div>
             <div class="profile-card">
                 <h3>WILFRIED</h3>
-                <p>
-                    Wilfried, homme Taureau, est connu pour son calme, sa stabilité et son tempérament réfléchi. Passionné de football, il suit avec enthousiasme le PSG et apprécie le sport sous toutes ses formes.
+                <p>Wilfried, homme Taureau, est connu pour son calme, sa stabilité et son tempérament réfléchi. Passionné de football, il suit avec enthousiasme le PSG et apprécie le sport sous toutes ses formes.
 
 Grand amateur de gastronomie, son plat préféré reste les lasagnes, qu'il pourrait déguster à n'importe quelle occasion. Lorsqu'il ne parle pas de football ou de cuisine, Wilfried aime consacrer son temps au jardinage. On le retrouve souvent chez Truffaut le dimanche, à la recherche de nouvelles plantes et d'idées pour embellir son jardin.
 
 Curieux de nature et toujours attentif à ce qui se passe autour de lui, il ne cache pas son goût pour les potins et les anecdotes du quotidien. Il aime analyser les situations sous tous les angles, tirer des conclusions et défendre ses points de vue avec assurance.
 
-Entre passion du ballon rond, amour du jardin, plaisir de bien manger et goût pour l'analyse, Wilfried cultive un art de vivre simple, convivial et authentique.
-                </p>
+Entre passion du ballon rond, amour du jardin, plaisir de bien manger et goût pour l'analyse, Wilfried cultive un art de vivre simple, convivial et authentique.</p>
             </div>
         </div>
     </div>
@@ -758,71 +272,30 @@ Entre passion du ballon rond, amour du jardin, plaisir de bien manger et goût p
 <!-- POPUP -->
 <div class="rules-overlay" id="rulesOverlay">
     <div class="rules-modal" role="dialog" aria-modal="true">
-
         <button class="modal-close" id="closeRules">✕</button>
-
         <div class="modal-header">
             <div class="modal-eyebrow">Marion & Wilfried · Constitution officielle</div>
             <div class="modal-title">Les Règles du Duo</div>
             <div class="modal-subtitle">Ratifiées par les deux parties · En vigueur à vie</div>
         </div>
-
         <ul class="rules-list">
-            <li class="rule-item">
-                <span class="rule-number">01</span>
-                <span class="rule-text"><strong>Tout se dire, ne rien se cacher.</strong> La transparence est la fondation. Pas de non-dits, pas de sous-entendus qui traînent.</span>
-            </li>
-            <li class="rule-item">
-                <span class="rule-number">02</span>
-                <span class="rule-text"><strong>Ne pas juger les goûts musicaux de l'autre.</strong> Même les pires. Même ceux qu'on ne peut pas entendre sans grimacer. La playlist, c'est sacré.</span>
-            </li>
-            <li class="rule-item">
-                <span class="rule-number">03</span>
-                <span class="rule-text"><strong>Ne jamais perdre l'humour qui nous caractérise.</strong> C'est notre signature. Notre langage secret. On le garde précieusement.</span>
-            </li>
-            <li class="rule-item">
-                <span class="rule-number">04</span>
-                <span class="rule-text"><strong>Pas trop tactile en public.</strong> On s'aime fort, mais on garde une certaine élégance côté affichage. Une dose de mystère, c'est chic.</span>
-            </li>
-            <li class="rule-item">
-                <span class="rule-number">05</span>
-                <span class="rule-text"><strong>Savoir se dire quand quelque chose ne va pas.</strong> Un malaise exprimé à temps vaut mieux qu'un silence qui s'installe.</span>
-            </li>
-            <li class="rule-item">
-                <span class="rule-number">06</span>
-                <span class="rule-text"><strong>Continuer à se taquiner, mais jamais blesser volontairement.</strong> La taquinerie c'est de l'amour déguisé. Dès que ça fait mal pour de vrai, on s'arrête.</span>
-            </li>
-            <li class="rule-item">
-                <span class="rule-number">07</span>
-                <span class="rule-text"><strong>Aucun débat sérieux après 23h30.</strong> Passé cette heure, tout ce qui est dit devient automatiquement nul et non avenu. On reporte au lendemain.</span>
-            </li>
-            <li class="rule-item">
-                <span class="rule-number">08</span>
-                <span class="rule-text"><strong>Le "j'ai faim" doit toujours être pris au sérieux.</strong> Sans exception. Sans délai. C'est une urgence nationale.</span>
-            </li>
-            <li class="rule-item">
-                <span class="rule-number">09</span>
-                <span class="rule-text"><strong>Interdiction formelle d'utiliser le "je suis pas ton mec / je suis pas ta meuf"</strong> pour gagner un débat. C'est la carte joker la plus déloyale. Elle est bannie.</span>
-            </li>
-            <li class="rule-item">
-                <span class="rule-number">10</span>
-                <span class="rule-text"><strong>Se voir au moins une fois en vrai dans la journée.</strong> Obligation. Incontournable. Un sourire en chair et en os, ça ne se remplace pas.</span>
-            </li>
-            <li class="rule-item">
-                <span class="rule-number">11</span>
-                <span class="rule-text"><strong>Pour chaque ascenseur, un doux baiser tu devras donner.</strong> La loi de l'ascenseur est absolue. Aucune dérogation possible, même en cas de retard.</span>
-            </li>
-            <li class="rule-item">
-                <span class="rule-number">12</span>
-                <span class="rule-text"><strong>Toujours mentionner Xavier FFF</strong> quand on ne sait pas si on a le droit d'écrire ou pas. Xavier sait. Xavier tranche. C'est ainsi.</span>
-            </li>
+            <li class="rule-item"><span class="rule-number">01</span><span class="rule-text"><strong>Tout se dire, ne rien se cacher.</strong> La transparence est la fondation. Pas de non-dits, pas de sous-entendus qui traînent.</span></li>
+            <li class="rule-item"><span class="rule-number">02</span><span class="rule-text"><strong>Ne pas juger les goûts musicaux de l'autre.</strong> Même les pires. Même ceux qu'on ne peut pas entendre sans grimacer. La playlist, c'est sacré.</span></li>
+            <li class="rule-item"><span class="rule-number">03</span><span class="rule-text"><strong>Ne jamais perdre l'humour qui nous caractérise.</strong> C'est notre signature. Notre langage secret. On le garde précieusement.</span></li>
+            <li class="rule-item"><span class="rule-number">04</span><span class="rule-text"><strong>Pas trop tactile en public.</strong> On s'aime fort, mais on garde une certaine élégance côté affichage. Une dose de mystère, c'est chic.</span></li>
+            <li class="rule-item"><span class="rule-number">05</span><span class="rule-text"><strong>Savoir se dire quand quelque chose ne va pas.</strong> Un malaise exprimé à temps vaut mieux qu'un silence qui s'installe.</span></li>
+            <li class="rule-item"><span class="rule-number">06</span><span class="rule-text"><strong>Continuer à se taquiner, mais jamais blesser volontairement.</strong> La taquinerie c'est de l'amour déguisé. Dès que ça fait mal pour de vrai, on s'arrête.</span></li>
+            <li class="rule-item"><span class="rule-number">07</span><span class="rule-text"><strong>Aucun débat sérieux après 23h30.</strong> Passé cette heure, tout ce qui est dit devient automatiquement nul et non avenu. On reporte au lendemain.</span></li>
+            <li class="rule-item"><span class="rule-number">08</span><span class="rule-text"><strong>Le "j'ai faim" doit toujours être pris au sérieux.</strong> Sans exception. Sans délai. C'est une urgence nationale.</span></li>
+            <li class="rule-item"><span class="rule-number">09</span><span class="rule-text"><strong>Interdiction formelle d'utiliser le "je suis pas ton mec / je suis pas ta meuf"</strong> pour gagner un débat. C'est la carte joker la plus déloyale. Elle est bannie.</span></li>
+            <li class="rule-item"><span class="rule-number">10</span><span class="rule-text"><strong>Se voir au moins une fois en vrai dans la journée.</strong> Obligation. Incontournable. Un sourire en chair et en os, ça ne se remplace pas.</span></li>
+            <li class="rule-item"><span class="rule-number">11</span><span class="rule-text"><strong>Pour chaque ascenseur, un doux baiser tu devras donner.</strong> La loi de l'ascenseur est absolue. Aucune dérogation possible, même en cas de retard.</span></li>
+            <li class="rule-item"><span class="rule-number">12</span><span class="rule-text"><strong>Toujours mentionner Xavier FFF</strong> quand on ne sait pas si on a le droit d'écrire ou pas. Xavier sait. Xavier tranche. C'est ainsi.</span></li>
         </ul>
-
         <div class="modal-footer">
             <div class="modal-footer-text">Lu, approuvé, et gravé dans nos cœurs 💛</div>
             <div class="modal-seal">Marion & Wilfried · 2026 · Pour toujours</div>
         </div>
-
     </div>
 </div>
 
@@ -830,38 +303,14 @@ Entre passion du ballon rond, amour du jardin, plaisir de bien manger et goût p
 <div id="music-widget">
     <button id="togglePlayer">🎵 Notre chanson</button>
     <div id="player-container">
-        <iframe
-            width="300"
-            height="170"
-            src="https://www.youtube.com/embed/TcEk-ymzS3E?start=39"
-            title="J'attends l'amour"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/TcEk-ymzS3E?start=39" title="J'attends l'amour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </div>
 
 <style>
-#music-widget{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    z-index:9999;
-}
-#togglePlayer{
-    background:rgba(255,255,255,.15);
-    color:white;
-    border:1px solid rgba(255,255,255,.3);
-    border-radius:50px;
-    padding:15px 25px;
-    cursor:pointer;
-    backdrop-filter:blur(10px);
-}
-#player-container{
-    display:none;
-    margin-top:10px;
-}
+#music-widget{ position:fixed; bottom:20px; right:20px; z-index:9999; }
+#togglePlayer{ background:rgba(255,255,255,.15); color:white; border:1px solid rgba(255,255,255,.3); border-radius:50px; padding:15px 25px; cursor:pointer; backdrop-filter:blur(10px); }
+#player-container{ display:none; margin-top:10px; }
 </style>
 
 <script>
@@ -873,7 +322,6 @@ document.getElementById('togglePlayer').addEventListener('click', function() {
 const expressions = document.querySelectorAll('.expression');
 const dots = document.querySelectorAll('.dot');
 let currentExpression = 0;
-
 setInterval(() => {
     expressions[currentExpression].classList.remove('active');
     dots[currentExpression].classList.remove('active');
@@ -885,10 +333,8 @@ setInterval(() => {
 const overlay  = document.getElementById('rulesOverlay');
 const openBtn  = document.getElementById('openRules');
 const closeBtn = document.getElementById('closeRules');
-
 function openModal()  { overlay.classList.add('open');    document.body.style.overflow = 'hidden'; }
 function closeModal() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
-
 openBtn.addEventListener('click', openModal);
 closeBtn.addEventListener('click', closeModal);
 overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
