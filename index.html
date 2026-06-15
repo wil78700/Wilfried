@@ -588,15 +588,29 @@ footer p{
     text-transform: uppercase;
 }
 
-@media(max-width:768px){
-    .hero-title{ font-size:4rem; }
-    .menu{ display:none; }
-    .section-title h2{ font-size:2rem; }
-    .hero-subtitle{ letter-spacing:4px; }
-    .expression{ font-size:2rem; }
-    .rules-banner-inner{ flex-direction:column; align-items:flex-start; gap:24px; }
-    .rules-banner-title{ font-size:2.4rem; }
-    .btn-rules{ width:100%; justify-content:center; }
+@media (max-width: 768px) {
+    .rules-banner-inner {
+        flex-direction: column;
+        align-items: center;  /* ← changer flex-start en center */
+        gap: 24px;
+        text-align: center;   /* ← ajouter */
+    }
+    .rules-banner-title {
+        font-size: 2.4rem;
+    }
+    .rules-banner-sub {
+        margin: 0 auto;       /* ← ajouter pour centrer le paragraphe */
+    }
+    .rules-banner-eyebrow {
+        justify-content: center; /* ← ajouter pour centrer les tirets */
+    }
+    .rules-badge {
+        margin: 0 auto 20px;  /* ← ajouter */
+    }
+    .btn-rules {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 @media(max-width:640px){
